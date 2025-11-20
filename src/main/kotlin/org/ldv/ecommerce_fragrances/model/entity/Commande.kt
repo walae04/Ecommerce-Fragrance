@@ -14,7 +14,12 @@ class Commande(@Id
 //Association one to one avec paiement
                @OneToOne
                @JoinColumn(name = "paiement_fk_id")
-               var paiement: Paiement? = null
+               var paiement: Paiement? = null,
+
+// Association One to Many avec ligneCommande
+   @OneToMany(mappedBy = "commande", orphanRemoval = true)
+   var ligneCommande: MutableList<LigneCommande> = mutableListOf()
+
 
 
 

@@ -6,7 +6,7 @@ import jakarta.persistence.*
 class Categorie(@Id
                 @GeneratedValue(strategy = GenerationType.IDENTITY)
                 @Column(nullable = false)
-    var idCategorie: Long,
+    var idCategorie: Long? = null,
     var titre: String,
 //Association avec Produit
             @OneToMany(mappedBy = "categorie",cascade = [CascadeType.ALL], orphanRemoval = true)

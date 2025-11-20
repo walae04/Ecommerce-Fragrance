@@ -5,7 +5,7 @@ class Produit(@Id
               @GeneratedValue(strategy = GenerationType.IDENTITY)
               @Column(nullable = false)
 
-    var idProduit: Long,
+    var idProduit: Long? = null,
     var nom: String,
     var description: String,
     var prix: Double,

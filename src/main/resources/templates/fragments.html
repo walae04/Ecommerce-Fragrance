@@ -13,8 +13,8 @@
 
         <!-- SECTION 1 : LOGO CENTRÉ -->
         <div class="container-fluid d-flex flex-column align-items-center bg-body-tertiary py-1">
-            <a class="navbar-brand mb-0" href="#">
-                <img th:src="@{/img/logo/Maison_Célisandre_Logo_centre}"
+            <a class="navbar-brand mb-1 mt-2" href="#">
+                <img th:src="@{/img/logo/MC-centre.png}"
                      alt="Logo"
                      class="img-fluid"
                      style="max-height: 170px;">
@@ -30,7 +30,7 @@
                     <img th:src="@{/img/logo/Maison_Célisandre_BlackLogo.png}"
                          alt="Logo"
                          class="img-fluid"
-                         style="max-height: 55px;">
+                         style="max-height: 80px;">
                 </a>
 
                 <!-- BOUTON MOBILE -->
@@ -49,16 +49,18 @@
                     </ul>
 
                     <!-- ICONES À DROITE -->
-                    <div class="d-flex align-items-center gap-3">
-                        <form class="d-flex">
+                    <div class="d-flex align-items-center gap-4 ">
+                        <form class="d-flex text-dark fs-5 ">
                             <input class="form-control me-2" type="search" placeholder="Rechercher…">
-                            <button class="btn btn-outline-dark" type="submit">
                                 <i class="bi bi-search"></i>
-                            </button>
                         </form>
-
-                        <a href="#" class="text-dark fs-4">
-                            <i class="bi bi-person"></i>
+                        <!-- ICONNE LOGIN  -->
+                            <a class="text-dark fs-5 " href="#" data-bs-toggle="dropdown">
+                                <i class="bi bi-person"></i>
+                            </a>
+                        <!-- ICONNE PANIER -->
+                        <a class="text-dark fs-5" data-bs-toggle="offcanvas" href="#panierSidebar">
+                            <i class="bi bi-bag"></i>
                         </a>
                     </div>
 
@@ -67,7 +69,22 @@
         </nav>
 
     </header>
+    <!-- OFFCANVAS PANIER -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="panierSidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Votre panier</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
 
+        <div class="offcanvas-body">
+            <p>Aucun article pour le moment.</p>
+
+            <hr>
+
+            <button class="btn btn-dark w-100">Voir le panier</button>
+            <button class="btn btn-outline-dark w-100 mt-2">Passer la commande</button>
+        </div>
+    </div>
 </div>
 <div th:fragment="footer" class="container">
     <footer class="">
@@ -76,6 +93,7 @@
 
 
 </div>
+
 
 </body>
 </html>

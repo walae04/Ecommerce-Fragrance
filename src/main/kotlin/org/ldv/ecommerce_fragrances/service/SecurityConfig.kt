@@ -24,11 +24,11 @@ class SecurityConfig {
             .csrf { it.disable() } //TODO Retirer cette ligne
             //Restriction des endpoints en fonction du role
             .authorizeHttpRequests {
-                it.requestMatchers("/E-commerce", "/E-commerce/register", "/E-commerce/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
+                it.requestMatchers("/e-commerce", "/e-commerce/register", "/e-commerce/login", "/css/**", "/js/**", "/img/**", "/favicon.ico").permitAll()
                     // Autoriser l'accès pour les utilisateurs avec le rôle "ADMIN" à /admin/**
-                    .requestMatchers("/E-commerce/admin/**").hasRole("ADMIN")
+//                    .requestMatchers("/e-commerce/admin/**").hasRole("ADMIN")
                     // Autoriser l'accès pour les utilisateurs avec le rôle "CLIENT" à /client/**
-                    .requestMatchers("/E-commerce/client/**").hasRole("CLIENT")
+//                    .requestMatchers("/e-commerce/client/**").hasRole("CLIENT")
                     // Toutes les autres requêtes doivent être authentifiées
                     .anyRequest().authenticated()
 
@@ -36,14 +36,14 @@ class SecurityConfig {
             // Configuration du formulaire de connexion
             .formLogin { form: FormLoginConfigurer<HttpSecurity?> ->
                 form
-                    .loginPage("/E-commerce/login").defaultSuccessUrl("/E-commerce/profil").failureUrl("/E-commerce/login?error=true")
+                    .loginPage("/e-commerce/login").defaultSuccessUrl("/e-commerce/profil").failureUrl("/e-commerce/login?error=true")
                     .permitAll()
             }
 
             // Configuration du mécanisme de déconnexion
             .logout { logout: LogoutConfigurer<HttpSecurity?> ->
                 logout
-                    .logoutUrl("/E-commerce/logout")
+                    .logoutUrl("/e-commerce/logout")
                     .permitAll()
             }
 

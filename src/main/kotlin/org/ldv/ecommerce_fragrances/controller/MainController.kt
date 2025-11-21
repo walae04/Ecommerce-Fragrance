@@ -8,11 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
 class MainController (){
-
-
     /**
      * Méthode permettant d'afficher la page d'accueil de l'application.
-     * @return le chemin vers le template a partir du dossier ressources/templates (on ne marque pas le .html)
+     * @return le chemin vers le template à partir du dossier ressources/templates (on ne marque pas le .html)
      */
     @GetMapping("/e-commerce")
     fun home():String{
@@ -23,7 +21,7 @@ class MainController (){
     fun login(@RequestParam error: Boolean?, model: Model): String {
         // Ajoute un attribut "error" au modèle si la requête contient une erreur
         model.addAttribute("error", error == true)
-        return "pagesVisiteur/login"
+        return "pageVisiteur/login"
     }
     @GetMapping("/e-commerce/profil")
     fun profile(authentication: Authentication): String {
@@ -33,11 +31,11 @@ class MainController (){
 
         // Si l'utilisateur est admin → redirection
         if ("ROLE_ADMIN" in roles) {
-            return "redirect:/e-commerce/admin/dashboard"
+            return "pageAdmin/dashboard"
         }
 
         // Sinon → on affiche la page profile
-        return "pagesClient/profile"
+        return "pageClient/profile"
     }
 
 }

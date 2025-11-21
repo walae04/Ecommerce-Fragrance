@@ -8,38 +8,65 @@
     <title>Document</title>
 </head>
 <body>
-<div th:fragment="header" class="container">
-    <header class="py-3 mb-3 border-bottom">
-        <div class="container-fluid d-grid gap-3 align-items-center">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary row">
-                <div class="container-fluid col-2">
-                    <img th:src="@{/img/logo/Maison_Célisandre_BlackLogo.png}" alt="Logo" class="img-fluid " >
-                </div>
-                <div class="container-fluid">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Découvrir</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Fragrances</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Collections</a>
-                        </li>
+<div th:fragment="header" class="container-fluid p-0">
+    <header class="border-bottom m-0 p-0">
+
+        <!-- SECTION 1 : LOGO CENTRÉ -->
+        <div class="container-fluid d-flex flex-column align-items-center bg-body-tertiary py-1">
+            <a class="navbar-brand mb-0" href="#">
+                <img th:src="@{/img/logo/Maison_Célisandre_Logo_centre}"
+                     alt="Logo"
+                     class="img-fluid"
+                     style="max-height: 170px;">
+            </a>
+        </div>
+
+        <!-- SECTION 2 : BARRE DE NAVIGATION -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary w-100 m-0 p-0">
+            <div class="container-fluid">
+
+                <!-- PETIT LOGO À GAUCHE -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img th:src="@{/img/logo/Maison_Célisandre_BlackLogo.png}"
+                         alt="Logo"
+                         class="img-fluid"
+                         style="max-height: 55px;">
+                </a>
+
+                <!-- BOUTON MOBILE -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- MENU + ICONES -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+
+                    <!-- MENU CENTRÉ -->
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#">Découvrir</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Fragrances</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Collections</a></li>
                     </ul>
-                    <div class="container-fluid col-2">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i>Search</button>
+
+                    <!-- ICONES À DROITE -->
+                    <div class="d-flex align-items-center gap-3">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Rechercher…">
+                            <button class="btn btn-outline-dark" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
                         </form>
-                        <i class="bi bi-person"></i>
+
+                        <a href="#" class="text-dark fs-4">
+                            <i class="bi bi-person"></i>
+                        </a>
                     </div>
 
                 </div>
-            </nav>
-        </div>
-    </header>
+            </div>
+        </nav>
 
+    </header>
 
 </div>
 <div th:fragment="footer" class="container">

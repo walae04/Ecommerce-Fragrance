@@ -86,10 +86,67 @@
         </div>
     </div>
 </div>
-<div th:fragment="footer" class="container">
-    <footer class="">
-        <!--Votre pied de page-->
+<div th:fragment="footer" class="container-fluid">
+    <footer class="bg-light text-dark py-5 w-100">
+        <div class="container-fluid">
+
+            <!-- LIGNE 1 : LOGO CENTRAL -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto text-center">
+                    <a href="#">
+                        <img th:src="@{/img/logo/MC-centre.png}" alt="Logo1" class="img-fluid" style="max-height: 100px;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- LIGNE 2 : LOGO 2 + LIENS + CONTACT -->
+            <div class="row text-start justify-content-between px-5">
+
+                <!-- Logo 2 -->
+                <div class="col-md-4 mb-3 d-flex flex-column align-items-start">
+                    <a href="#">
+                        <img th:src="@{/img/logo/Maison_Célisandre_BlackLogo.png}" alt="Logo2" class="img-fluid mb-2" style="max-height: 80px;">
+                    </a>
+                    <p class="text-muted" style="font-size: 0.9rem;">
+                        Maison de parfums d'exception
+                    </p>
+                </div>
+
+                <!-- Liens Découvrir -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">Découvrir</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark text-decoration-none">Fragrances</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none">Collections</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none">Boutiques</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Réseaux -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">Nous contacter</h6>
+                    <p class="mb-1 text-muted">contact@maisoncelisandre.com</p>
+                    <p class="mb-3 text-muted">+33 1 23 45 67 89</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MENTIONS LEGALES -->
+            <div class="text-center text-muted pt-3 border-top" style="font-size: 0.8rem;">
+                © 2025 Maison Célisandre. Tous droits réservés.
+                <a href="#" class="text-muted text-decoration-none">Mentions légales</a> |
+                <a href="#" class="text-muted text-decoration-none">Politique de confidentialité</a>
+            </div>
+
+        </div>
     </footer>
+
+
 
 
 </div>

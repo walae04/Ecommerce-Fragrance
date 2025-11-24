@@ -1,11 +1,115 @@
 <!doctype html>
 <html th:replace="base :: html" lang="fr" xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="content">
-    <main class="py-5">
-        <div class="container">
-            <h1 class="mb-5 text-center">Accueil</h1>
+    <main class="py-0">
+<!--        <div class="container">-->
+<!--            <h1 class="mb-5 text-center">Accueil</h1>-->
+<!--        </div>-->
+        <div class="text-center">
+            <img th:src="@{/img/parfums/fond3.png}" alt="Image d'accueil" class="img-fluid " style="width:100%; height:700px; object-fit:cover;">
+            <a href="#"
+               class="btn btn-danger position-absolute top-100 start-50 translate-middle">
+                Nouveauté
+            </a>
+        </div>
+        <!-- SECTION CATEGORIES -->
+        <div class="container mt-5">
+            <div class="row g-4 text-center">
+
+                <!-- Extraits de parfums -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0">
+                        <img th:src="@{/img/parfums/fond3.png}"
+                             class="card-img-top categorie-img"
+                             alt="Extraits de parfums">
+
+                        <div class="card-body">
+                            <h4 class="fw-bold categorie-title">Extraits de parfums</h4>
+
+                            <a href="/extraits" class="btn voir-plus-btn mt-2">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voiles de parfums -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0">
+                        <img th:src="@{/img/brumes/voileparfum_cat.png}"
+                             class="card-img-top categorie-img"
+                             alt="Voiles de parfums">
+
+                        <div class="card-body">
+                            <h4 class="fw-bold categorie-title">Voiles de parfums</h4>
+
+                            <a href="/voiles" class="btn voir-plus-btn mt-2">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bougies -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0">
+                        <img th:src="@{/img/bougies/bougies-cat.png}"
+                             class="card-img-top categorie-img"
+                             alt="Bougies parfumées">
+
+                        <div class="card-body">
+                            <h4 class="fw-bold categorie-title">Bougies parfumées</h4>
+
+                            <a href="/bougies" class="btn voir-plus-btn mt-2">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- STYLE pour uniformiser les images -->
+        <style>
+            .categorie-img {
+                height: 380px;        /* la même hauteur pour les 3 */
+                object-fit: cover;    /* garde la taille propre sans déformer */
+                width: 100%;
+            }
+            /* Style bouton */
+            .voir-plus-btn {
+                background-color: #000;
+                color: #fff;
+                border: none;
+                padding: 10px 22px;
+                border-radius: 50px;
+                transition: 0.3s;
+            }
+
+            .voir-plus-btn:hover {
+                background-color: #333;
+                transform: translateY(-2px);
+            }
+        </style>
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- IMAGE À GAUCHE -->
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img th:src="@{/img/Maison.png}" alt="Maison Célisandre" class="img-fluid rounded" style="width: 100%; height: auto;">
+                    </div>
+
+                    <!-- TEXTE À DROITE -->
+                    <div class="col-md-6">
+                        <h2 class="mb-3">Maison Célisandre</h2>
+                        <p class="text-muted" style="font-size: 1.1rem; line-height: 1.6;">
+                            Fondée au cœur de la passion pour l’art olfactif, la Maison Célisandre est née de la volonté de créer des parfums uniques, à la fois raffinés et intemporels. Depuis sa fondation en 2023, chaque fragrance est conçue comme une signature personnelle, mêlant savoir-faire traditionnel et créativité contemporaine.
+                            Inspirée par la beauté des matières premières les plus rares et le désir de raconter des histoires à travers les senteurs, la Maison Célisandre s’impose comme un symbole d’élégance discrète et de sophistication.
+                            Aujourd’hui, chaque parfum reflète l’âme de la maison : un hommage à l’art, à l’émotion et à l’excellence du parfum.   </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
 
+    </main>
+</div>
 
 
 

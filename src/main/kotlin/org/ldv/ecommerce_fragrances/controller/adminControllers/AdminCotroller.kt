@@ -5,5 +5,5 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class AdminCotroller {
     @GetMapping("e-commerce/admin")
-    fun accueil():String = "dashboard"
+    fun accueil():String = "pageAdmin/dashboard"
 }

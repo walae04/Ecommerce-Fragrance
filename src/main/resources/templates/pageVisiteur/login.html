@@ -1,29 +1,48 @@
 <!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-<body>
-<div class="col-8 col-lg-6 mx-auto p-2  mt-3">
-    <form action="/e-commerce/login" method="post">
-        <h1>Login</h1>
-        <!-- Affiche le message d'erreur si l'attribut "error" est présent dans le modèle -->
-        <p th:if="${error}" class="alert alert-danger">Identifiants incorrects. Veuillez réessayer.</p>
-        <div class="mb-3">
-            <label for="username">Email</label>
-            <input required class="form-control" id="username" name="username" type="text">
-        </div>
-        <div class="mb-3">
-            <label for="password">Mdp</label>
-            <input required class="form-control" id="password" name="password" type="password">
-        </div>
-        <button class="btn btn-primary">Envoyer</button>
-    </form>
-</div>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base :: html">
 
-</body>
+<div th:fragment="content">
+
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card shadow p-4" style="max-width: 400px; width: 100%; border-radius: 12px;">
+
+            <h1 class="text-center mb-4">Connexion</h1>
+
+            <!-- Message d'erreur -->
+            <div th:if="${error}" class="alert alert-danger text-center">
+                Identifiants incorrects. Veuillez réessayer.
+            </div>
+
+            <form th:action="@{/e-commerce/login}" method="post">
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Votre email" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Votre mot de passe" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100">Se connecter</button>
+
+            </form>
+
+            <div class="mt-3 text-center">
+                <a th:href="@{/e-commerce/register}">Créer un compte</a> |
+                <a th:href="@{/e-commerce/forgot-password}">Mot de passe oublié ?</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 </html>

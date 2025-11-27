@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base :: html">
+
+<div th:fragment="content">
+
+    <div class="d-flex justify-content-center align-items-start py-5">
+        <div class="card shadow p-4" style="max-width: 450px; width: 100%; border-radius: 12px;">
+
+            <h1 class="text-center mb-4">Créer un compte</h1>
+
+            <!-- Message d'erreur si nécessaire -->
+            <div th:if="${error}" class="alert alert-danger text-center">
+                Une erreur est survenue. Veuillez vérifier vos informations.
+            </div>
+
+            <form th:action="@{/e-commerce/register}" method="post">
+
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="prenom" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirmer le mot de passe</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmez le mot de passe" required>
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100">Créer mon compte</button>
+            </form>
+
+            <div class="mt-3 text-center">
+                Déjà un compte ? <a th:href="@{/e-commerce/login}">Se connecter</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</html>

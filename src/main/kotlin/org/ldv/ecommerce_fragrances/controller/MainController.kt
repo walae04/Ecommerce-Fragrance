@@ -1,5 +1,6 @@
 package org.ldv.ecommerce_fragrances.controller
 
+import org.ldv.ecommerce_fragrances.model.dao.UtilisateurDAO
 import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -7,7 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
-class MainController (){
+class MainController (
+    val utilisateurDAO: UtilisateurDAO
+){
     /**
      * Méthode permettant d'afficher la page d'accueil de l'application.
      * @return le chemin vers le template à partir du dossier ressources/templates (on ne marque pas le .html)
@@ -24,18 +27,25 @@ class MainController (){
         return "pageVisiteur/login"
     }
     @GetMapping("/e-commerce/profil")
-    fun profile(authentication: Authentication): String {
+    fun profile(authentication: Authentication,model: Model): String {
 
         // Récupération des rôles (authorities) de l’utilisateur connecté
         val roles = authentication.authorities.map { it.authority }
-
+        val email = authentication.name
+        val utilisateur = utilisateurDAO.findByEmail(email)
+    model.addAttribute("client", utilisateur)
         // Si l'utilisateur est admin → redirection
         if ("ROLE_ADMIN" in roles) {
-            return "pageAdmin/dashboard"
+            return "redirect:/e-commerce/admin"
         }
 
         // Sinon → on affiche la page profile
         return "pageClient/profile"
     }
+    @GetMapping("/e-commerce/register")
+    fun register(): String {
+        return "pageVisiteur/register"
+    }
+
 
 }

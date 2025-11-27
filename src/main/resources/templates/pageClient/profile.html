@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="base :: html">
+
+<div th:fragment="content">
+
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Mon Profil</h2>
+
+        <div class="card shadow p-4 mb-4">
+            <h4>Informations personnelles</h4>
+
+            <form th:action="@{/e-commerce/profil/update}" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Nom</label>
+                        <input type="text" class="form-control"
+                               th:value="${client.nom}" name="nom">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Prénom</label>
+                        <input type="text" class="form-control"
+                               th:value="${client.prenom}" name="prenom">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input type="email" class="form-control"
+                           th:value="${client.email}" name="email">
+                </div>
+
+<!--                <div class="mb-3">-->
+<!--                    <label>Téléphone</label>-->
+<!--                    <input type="text" class="form-control"-->
+<!--                           th:value="${client.telephone}" name="telephone">-->
+<!--                </div>-->
+
+                <button class="btn btn-dark w-100">Mettre à jour</button>
+            </form>
+        </div>
+
+        <div class="card shadow p-4">
+            <h4>Adresse</h4>
+
+            <form th:action="@{/e-commerce/profil/update-adresse}" method="post">
+
+<!--                <div class="mb-3">-->
+<!--                    <label>Adresse</label>-->
+<!--                    <input type="text" class="form-control"-->
+<!--                           th:value="${client.adresse}" name="adresse">-->
+<!--                </div>-->
+
+<!--                <div class="row">-->
+<!--                    <div class="col-md-4 mb-3">-->
+<!--                        <label>CP</label>-->
+<!--                        <input type="text" class="form-control"-->
+<!--                               th:value="${client.cp}" name="cp">-->
+<!--                    </div>-->
+
+<!--                    <div class="col-md-8 mb-3">-->
+<!--                        <label>Ville</label>-->
+<!--                        <input type="text" class="form-control"-->
+<!--                               th:value="${client.ville}" name="ville">-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+                <button class="btn btn-outline-dark w-100">Mettre à jour l’adresse</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</html>

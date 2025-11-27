@@ -5,13 +5,17 @@
 <!--        <div class="container">-->
 <!--            <h1 class="mb-5 text-center">Accueil</h1>-->
 <!--        </div>-->
-        <div class="text-center">
-            <img th:src="@{/img/parfums/fond3.png}" alt="Image d'accueil" class="img-fluid " style="width:100%; height:700px; object-fit:cover;">
-            <a href="#"
-               class="btn btn-danger position-absolute top-100 start-50 translate-middle">
-                Nouveauté
-            </a>
+        <div class="text-center position-relative">
+            <img th:src="@{/img/parfums/fond3.png}" alt="Image d'accueil"
+                 class="img-fluid" style="width:100%; height:700px; object-fit:cover;">
+
+            <!-- Conteneur des boutons -->
+            <div class="d-flex justify-content-center gap-3 position-absolute w-100" style="bottom: 20px;">
+                <a href="#" class="btn btn-danger">Nouveauté</a>
+                <a href="#" class="btn btn-danger">Découvrir</a>
+            </div>
         </div>
+
         <!-- SECTION CATEGORIES -->
         <div class="container mt-5">
             <div class="row g-4 text-center">
@@ -107,6 +111,140 @@
             </div>
         </section>
 
+        <section class="py-5 bg-light">
+            <div class="container">
+
+                <!-- TITRE SECTION -->
+                <h2 class="text-center mb-5">Notre collection</h2>
+
+                <div class="row g-4">
+
+                    <!-- CARD PRODUIT -->
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm position-relative">
+
+                            <!-- BADGE MEILLEURES VENTES -->
+                            <span class="position-absolute top-0 start-0 bg-dark text-light px-3 py-1"
+                                  style="font-size: 0.8rem; border-bottom-right-radius: 10px;">
+                        Meilleures Ventes
+                    </span>
+
+                            <!-- IMAGE PRODUIT -->
+                            <img th:src="@{/img/parfums/EclatDivoire.png}" class="card-img-top" alt="Parfum 1"
+                                 style="height: 350px; object-fit: cover;">
+
+                            <!-- CONTENU CARD -->
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Éclat d’Ivoire</h5>
+                                <p class="text-muted mb-3">120,00 €</p>
+                                <button class="btn btn-dark px-4">Ajouter au panier</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD PRODUIT 2 -->
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm position-relative">
+
+                            <!-- BADGE -->
+<!--                            <span class="position-absolute top-0 start-0 bg-dark text-light px-3 py-1"-->
+<!--                                  style="font-size: 0.8rem; border-bottom-right-radius: 10px;">-->
+<!--                                Meilleures Ventes-->
+<!--                            </span>-->
+
+                            <img th:src="@{/img/brumes/Ombre.png}" class="card-img-top" alt="Parfum 2"
+                                 style="height: 350px; object-fit: cover;">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Ombre</h5>
+                                <p class="text-muted mb-3">140,00 €</p>
+                                <button class="btn btn-dark px-4">Ajouter au panier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD PRODUIT 3 -->
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm position-relative">
+
+                            <!-- BADGE -->
+                            <span class="position-absolute top-0 start-0 bg-dark text-light px-3 py-1"
+                                  style="font-size: 0.8rem; border-bottom-right-radius: 10px;">
+                        Meilleures Ventes
+                    </span>
+
+                            <img th:src="@{/img/parfums/BoisDorea.png}" class="card-img-top" alt="Parfum 2"
+                                 style="height: 350px; object-fit: cover;">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Bois d'Oréa</h5>
+                                <p class="text-muted mb-3">140,00 €</p>
+                                <button class="btn btn-dark px-4">Ajouter au panier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD PRODUIT 4 -->
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm position-relative">
+
+<!--                            &lt;!&ndash; BADGE &ndash;&gt;-->
+<!--                            <span class="position-absolute top-0 start-0 bg-dark text-light px-3 py-1"-->
+<!--                                  style="font-size: 0.8rem; border-bottom-right-radius: 10px;">-->
+<!--                        Meilleures Ventes-->
+<!--                    </span>-->
+
+                            <img th:src="@{/img/bougies/Esmea.png}" class="card-img-top" alt="Parfum 2"
+                                 style="height: 350px; object-fit: cover;">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Esmea</h5>
+                                <p class="text-muted mb-3">140,00 €</p>
+                                <button class="btn btn-dark px-4">Ajouter au panier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD PRODUIT 5 -->
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm position-relative">
+
+                            <!-- BADGE -->
+                            <span class="position-absolute top-0 start-0 bg-dark text-light px-3 py-1"
+                                  style="font-size: 0.8rem; border-bottom-right-radius: 10px;">
+                        Meilleures Ventes
+                    </span>
+
+                            <img th:src="@{/img/brumes/solaire.png}" class="card-img-top" alt="Parfum 2"
+                                 style="height: 350px; object-fit: cover;">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Solaire</h5>
+                                <p class="text-muted mb-3">140,00 €</p>
+                                <button class="btn btn-dark px-4">Ajouter au panier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD PRODUIT 6 -->
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm position-relative">
+
+                    <span class="position-absolute top-0 start-0 bg-dark text-light px-3 py-1"
+                          style="font-size: 0.8rem; border-bottom-right-radius: 10px;">
+                        Meilleures Ventes
+                    </span>
+
+                            <img th:src="@{/img/bougies/Elyor.png}" class="card-img-top" alt="Parfum 3"
+                                 style="height: 350px; object-fit: cover;">
+
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Elyor</h5>
+                                <p class="text-muted mb-3">135,00 €</p>
+                                <button class="btn btn-dark px-4">Ajouter au panier</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     </main>
 </div>
